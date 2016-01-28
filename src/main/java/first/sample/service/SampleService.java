@@ -13,4 +13,6 @@ public interface SampleService {
 
 	void updateBoard(Map<String, Object> map) throws Exception;
 
+	void deleteBoard(Map<String, Object> map) throws Exception;
+
 }
