@@ -35,4 +35,9 @@ public class SampleServiceImpl implements SampleService{
 	    return resultMap;
 	}
 
+	@Override
+	public void updateBoard(Map<String, Object> map) throws Exception {
+		sampleDAO.updateBoard(map);		
+	}
+
 }
