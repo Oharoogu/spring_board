@@ -17,6 +17,7 @@
 			ORDER BY IDX DESC
 		]]>
 	</select>
+
 	<insert id="insertBoard" parameterType="hashmap">
     <![CDATA[
         INSERT INTO TB_BOARD
@@ -41,4 +42,31 @@
         )
     ]]>
 	</insert>
+
+	<update id="updateHitCnt" parameterType="hashmap">
+    <![CDATA[
+        UPDATE TB_BOARD 
+        SET
+            HIT_CNT = NVL(HIT_CNT, 0) + 1
+        WHERE
+            IDX = #{IDX}    
+    ]]>
+	</update>
+
+	<select id="selectBoardDetail" parameterType="hashmap"
+		resultType="hashmap">
+    <![CDATA[
+        SELECT
+            IDX,
+            HIT_CNT,
+            CREA_ID,
+            CREA_DTM,
+            TITLE,
+            CONTENTS
+        FROM
+            TB_BOARD
+        WHERE
+            IDX = #{IDX}        
+    ]]>
+	</select>
 </mapper>
