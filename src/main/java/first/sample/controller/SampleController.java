@@ -90,4 +90,13 @@ public class SampleController {
 	    mv.addObject("IDX", commandMap.get("IDX"));
 	    return mv;
 	}
+	
+	@RequestMapping(value="/sample/deleteBoard.do")
+	public ModelAndView deleteBoard(CommandMap commandMap) throws Exception{
+	    ModelAndView mv = new ModelAndView("redirect:/sample/openBoardList.do");
+	     
+	    sampleService.deleteBoard(commandMap.getMap());
+	     
+	    return mv;
+	}
 }
