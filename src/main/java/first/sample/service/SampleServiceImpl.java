@@ -40,4 +40,10 @@ public class SampleServiceImpl implements SampleService{
 		sampleDAO.updateBoard(map);		
 	}
 
+	@Override
+	public void deleteBoard(Map<String, Object> map) throws Exception {
+		sampleDAO.deleteBoard(map);		
+		
+	}
+
 }
