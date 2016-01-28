@@ -9,4 +9,6 @@ public interface SampleService {
 
 	void insertBoard(Map<String, Object> map) throws Exception;
 
+	Map<String, Object> selectBoardDetail(Map<String, Object> map) throws Exception;
+
 }
