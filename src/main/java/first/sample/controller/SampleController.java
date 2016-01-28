@@ -52,4 +52,13 @@ public class SampleController {
 	    return mv;
 	}
 	
+	@RequestMapping(value="/sample/insertBoard.do")
+	public ModelAndView insertBoard(CommandMap commandMap) throws Exception{
+	    ModelAndView mv = new ModelAndView("redirect:/sample/openBoardList.do");
+	     
+	    sampleService.insertBoard(commandMap.getMap());
+	     
+	    return mv;
+	}
+	
 }
