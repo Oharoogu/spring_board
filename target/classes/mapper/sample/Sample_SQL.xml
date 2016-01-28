@@ -69,4 +69,15 @@
             IDX = #{IDX}        
     ]]>
 	</select>
+
+	<update id="updateBoard" parameterType="hashmap">
+    <![CDATA[
+        UPDATE TB_BOARD 
+        SET
+            TITLE = #{TITLE},
+            CONTENTS = #{CONTENTS}
+        WHERE
+            IDX = #{IDX}    
+    ]]>
+	</update>
 </mapper>
