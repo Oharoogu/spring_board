@@ -30,10 +30,19 @@
     </form>
      
     <%@ include file="/WEB-INF/include/include-body.jspf" %>
-    <script type="text/javascript">
-        $(document).ready(function(){
-                     
-        });
+	    <script type="text/javascript">
+	    $(document).ready(function() {
+	        $("#list").on("click", function(e){
+	            e.preventDefault();
+	            fn_openBoardList();
+	        });     
+	    });
+     
+    function fn_openBoardList() {
+        var comSubmit = new ComSubmit();
+        comSubmit.setUrl("<c:url value='/sample/openBoardList.do' />");
+        comSubmit.submit();
+    }
     </script>
 </body>
 </html>
