@@ -33,8 +33,19 @@
             <tr>
                 <td colspan="4">${map.CONTENTS }</td>
             </tr>
+            <tr>
+                <th scope="row">첨부파일</th>
+                <td colspan="3">
+                    <c:forEach var="row" items="${list }">
+                        <input type="hidden" id="IDX" value="${row.IDX }">
+                        <a href="#this" name="file">${row.ORIGINAL_FILE_NAME }</a> 
+                        (${row.FILE_SIZE }kb)
+                    </c:forEach>
+                </td>
+            </tr>
         </tbody>
     </table>
+    <br/>
      
     <a href="#this" class="btn" id="list">목록으로</a>
     <a href="#this" class="btn" id="update">수정하기</a>
@@ -50,6 +61,10 @@
             $("#update").on("click", function(e){
                 e.preventDefault();
                 fn_openBoardUpdate();
+            });
+            
+            $("a[name='file']").on("click", function(e){ //파일 이름
+                e.preventDefault();
             });
         });
          
