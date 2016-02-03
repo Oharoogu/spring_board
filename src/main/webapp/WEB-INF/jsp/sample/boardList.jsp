@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
 <%@ include file="/WEB-INF/include/include-header.jspf" %>
 <%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui" %>
 </head>
